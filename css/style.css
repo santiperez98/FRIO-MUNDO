@@ -28,7 +28,31 @@
 @import url(nice-select.css);
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
-
+.loader {
+     width: 84px;
+     height: 84px;
+     position: relative;
+   }
+   .loader:before , .loader:after {
+     content: "";
+     position: absolute;
+     left: 50%;
+     bottom: 0;
+     width:64px;
+     height: 64px;
+     border-radius: 50%;
+     background:#FFF;
+     transform: translate(-50% , -100%)  scale(0);
+     animation: push 2s infinite linear;
+   }
+   .loader:after {
+     animation-delay: 1s;
+   }
+   @keyframes push {
+       0% , 50%{ transform: translate(-50% , 0%)  scale(1) }
+     100% { transform: translate(-50%, -100%) scale(0) }
+   }
+ 
 * {
      box-sizing: border-box !important;
 }
@@ -154,8 +178,18 @@ a,
 img {
      max-width: 100%;
      height: auto;
+     
 }
-
+.logo-img {
+     width: 300px; /* Ajusta el ancho según sea necesario */
+     height: 100px; /* Mantén la relación de aspecto */
+ }
+ 
+ .logo_section {
+     display: flex;
+     align-items: center; /* Centra verticalmente el contenido */
+     padding-top: 10px; /* Ajusta el relleno superior según sea necesario */
+ }
  :focus {
      outline: 0;
 }
@@ -364,7 +398,7 @@ ul.btn li:last-child {
 .header {
      width: 100%;
      padding: 30px 30px;
-     background: transparent;
+     background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(36 112 222));
      position: absolute;
      z-index: 999;
 }
@@ -381,7 +415,7 @@ ul.btn li:last-child {
 /** banner section **/
 
 .banner_main {
-     background: url(../images/banner.jpg);
+     background: url(../images/bg4.png);
      background-repeat: no-repeat;
      min-height: 900px;
      background-size: 100% 100%;
@@ -424,6 +458,7 @@ ul.btn li:last-child {
 }
 
 .text-bg span {
+     margin-top: 250px;
      color: #fff;
      font-size: 42px;
      line-height: 50px;
@@ -445,7 +480,7 @@ ul.btn li:last-child {
 }
 
 .text_img {
-     margin-right: -130px;
+     margin-top: 100px;
 }
 
 .text_img figure {
@@ -460,27 +495,7 @@ ul.btn li:last-child {
      position: inherit;
 }
 
-#banner1 .carousel-inner {
-     padding-right: 130px;
-}
 
-#banner1 .carousel-indicators {
-     left: inherit;
-     bottom: 40px;
-}
-
-#banner1 .carousel-indicators li {
-     width: 20px;
-     height: 20px;
-     border-radius: 20px;
-     background: #48ca95;
-     margin-right: 5px;
-     margin-left: 5px;
-}
-
-#banner1 .carousel-indicators li.active {
-     background: #ffffff;
-}
 
 #banner1 a.carousel-control-next,
 #banner1 a.carousel-control-prev {
@@ -569,7 +584,7 @@ ul.btn li:last-child {
      background: #fff;
      text-align: center;
      padding: 50px 20px 20px 20px;
-     border: #48ca95 solid 1px;
+     border: #0000b0 solid 1px;
      border-radius: 15px;
 }
 
@@ -645,8 +660,8 @@ ul.btn li:last-child {
      display: block;
      margin-top: 50px;
      background-color: transparent;
-     border: #48ca95 solid 2px;
-     color: #48ca95 !important;
+     border: #0000b0 solid 2px;
+     color: #0000b0 !important;
      max-width: 232px;
      padding: 15px 0;
 }
@@ -665,7 +680,7 @@ ul.btn li:last-child {
 .laptop {
      font-family: 'Dosis', sans-serif;
      padding: 130px 0;
-     background-color: #4f4aa6;
+     background-color: #2470de;
 }
 
 .laptop .titlepage {
@@ -1005,7 +1020,7 @@ ul.social_icon li a:hover {
 
 .inner_posituong .header {
      position: inherit;
-     background: #4843a3;
+     background: #2470de;
 }
 
 .computer_page .laptop {
@@ -1082,3 +1097,97 @@ ul.social_icon li a:hover {
 
 /** end laptop **/
 
+/* Estilo para el campo de búsqueda */
+.search-input {
+     display: none;
+     padding: 10px;
+ }
+ 
+ .search-input input {
+     width: 100%;
+     padding: 5px;
+     box-sizing: border-box;
+ }
+
+
+ /* Estilo para los controles del carrusel */
+#banner1 .carousel-control-prev, 
+#banner1 .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#banner1 .carousel-control-prev i,
+#banner1 .carousel-control-next i {
+    color: white;
+    font-size: 24px;
+}
+
+#banner1 .carousel-control-prev {
+    left: 20px;
+}
+
+#banner1 .carousel-control-next {
+    right: 20px;
+}
+ /* Estilo para el campo de búsqueda */
+.search-input {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 20px;
+ }
+ 
+ .search-input input {
+     width: 100%;
+     padding: 10px;
+     box-sizing: border-box;
+     border: 2px solid #ddd; /* Establece el borde del campo de búsqueda */
+     border-radius: 5px; /* Añade bordes redondeados */
+ }
+ 
+ /* Estilo para los controles del carrusel */
+ #banner1 .carousel-control-prev,
+ #banner1 .carousel-control-next {
+     width: 40px;
+     height: 40px;
+     background-color: rgba(0, 0, 0, 0.5);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     cursor: pointer;
+     z-index: 1; /* Asegura que los botones estén sobre el carousel */
+ }
+ 
+ #banner1 .carousel-control-prev i,
+ #banner1 .carousel-control-next i {
+     color: white;
+     font-size: 24px;
+ }
+ 
+ #banner1 .carousel-control-prev {
+     left: 20px;
+ }
+ 
+ #banner1 .carousel-control-next {
+     right: 20px;
+ }
+ 
+ /* Estilo para resaltar el botón activo */
+ #banner1 .carousel-control-next:hover,
+ #banner1 .carousel-control-prev:hover {
+     background-color: rgba(0, 0, 0, 0.8);
+ }

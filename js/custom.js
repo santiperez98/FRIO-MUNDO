@@ -60,3 +60,19 @@ $(function () {
 
 
 });
+
+///
+function toggleSearch() {
+    var searchInput = document.getElementById('search-input');
+    var searchText = document.getElementById('searchText');
+
+    if (searchInput.style.display === 'block') {
+        searchInput.style.display = 'none';
+        searchText.value = ''; // Limpiar el texto cuando se oculta
+    } else {
+        searchInput.style.display = 'block';
+        searchText.focus(); // Enfocar el campo de texto al mostrar
+    }
+}
+//
+
