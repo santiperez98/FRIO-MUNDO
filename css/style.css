@@ -27,6 +27,23 @@
 @import url(jquery-ui.css);
 @import url(nice-select.css);
 
+aside {
+     width: 200px;
+     background-color: #f0f0f0;
+     padding: 20px;
+   }
+   
+   ul {
+     list-style-type: none;
+     padding: 0;
+   }
+   
+   li {
+     cursor: pointer;
+     padding: 10px 0;
+   }
+   
+
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 .loader {
      width: 84px;
@@ -134,7 +151,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-     color: #212121;
+     color: white;
      text-decoration: none!important;
      opacity: 1
 }
@@ -178,6 +195,7 @@ a,
 img {
      max-width: 100%;
      height: auto;
+     
      
 }
 .logo-img {
@@ -362,14 +380,14 @@ ul.btn li:last-child {
 
 .navigation.navbar-dark .navbar-nav .nav-link:focus,
 .navigation.navbar-dark .navbar-nav .nav-link:hover {
-     color: #51fe44;
+     color: #86c6ff;
 }
 
 .navigation.navbar-dark .navbar-nav .active>.nav-link,
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #51fe44;
+     color: #86c6ff;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -396,11 +414,11 @@ ul.btn li:last-child {
 }
 
 .header {
+     padding: 10px 10px;
      width: 100%;
-     padding: 30px 30px;
-     background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(36 112 222));
      position: absolute;
      z-index: 999;
+     background-image: url(../images/chico.png);
 }
 
 .logo a {
@@ -415,10 +433,9 @@ ul.btn li:last-child {
 /** banner section **/
 
 .banner_main {
-     background: url(../images/bg4.png);
+     background: url(../images/bg6.png);
      background-repeat: no-repeat;
      min-height: 900px;
-     background-size: 100% 100%;
      display: flex;
      justify-content: center;
      align-content: center;
@@ -446,7 +463,7 @@ ul.btn li:last-child {
      left: 38px;
 }
 .text-bg {
-     text-align: left;
+     margin: 10px;
 }
 
 .text-bg h1 {
@@ -488,7 +505,7 @@ ul.btn li:last-child {
 }
 
 .text_img figure img {
-     width: 100%;
+     width: 110%;
 }
 
 .carousel-caption {
@@ -533,12 +550,12 @@ ul.btn li:last-child {
 
 .titlepage h2 {
      font-size: 40px;
-     color: #090807;
+     color: #2273de;
      line-height: 55px;
      font-weight: bold;
      padding: 0;
      text-transform: uppercase;
-     border-bottom: #48ca95 solid 1px;
+     border-bottom: #2272db solid 1px;
      max-width: 315px;
      margin: auto;
 }
@@ -555,7 +572,7 @@ ul.btn li:last-child {
 
 .read_more {
      font-size: 17px;
-     background-color: #48ca95;
+     background-color: #0000b5;;
      color: #fff !important;
      padding: 13px 0px;
      width: 100%;
@@ -583,9 +600,12 @@ ul.btn li:last-child {
 .box_text {
      background: #fff;
      text-align: center;
-     padding: 50px 20px 20px 20px;
-     border: #0000b0 solid 1px;
+     padding: 0px 0px 0px 0px;
+     border: #3f5ac2 solid 1px;
      border-radius: 15px;
+     opacity: 0;
+     transform: translateY(40px);
+     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .box_text h3 {
@@ -606,6 +626,10 @@ ul.btn li:last-child {
      padding-bottom: 25px;
      display: block;
 }
+.box_text.active {
+     opacity: 1;
+     transform: translateY(0);
+   }
 
 
 /** end three_box section **/
@@ -660,8 +684,8 @@ ul.btn li:last-child {
      display: block;
      margin-top: 50px;
      background-color: transparent;
-     border: #0000b0 solid 2px;
-     color: #0000b0 !important;
+     border: #3f5ac2 solid 2px;
+     color: #3f5ac2 !important;
      max-width: 232px;
      padding: 15px 0;
 }
@@ -676,12 +700,6 @@ ul.btn li:last-child {
 
 
 /** laptop  section **/
-
-.laptop {
-     font-family: 'Dosis', sans-serif;
-     padding: 130px 0;
-     background-color: #2470de;
-}
 
 .laptop .titlepage {
      text-align: left;
@@ -798,7 +816,7 @@ ul.btn li:last-child {
 /** contact section **/
 
 .contact {
-     background: url(../images/contact_g.jpg);
+     background: url(../images/footerice1.png);
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding: 90px 0;
@@ -821,7 +839,7 @@ ul.btn li:last-child {
      margin-bottom: 25px;
      width: 100%;
      height: 57px;
-     background: transparent;
+     background: #000000a8;
      color: #fff;
      font-size: 18px;
      font-weight: normal;
@@ -832,7 +850,7 @@ ul.btn li:last-child {
      padding: 0px 15px;
      margin-bottom: 25px;
      width: 100%;
-     background: transparent;
+     background: #000000a8;
      color: #fff;
      font-size: 18px;
      font-weight: normal;
@@ -843,7 +861,7 @@ ul.btn li:last-child {
 .main_form .send_btn {
      font-size: 22px;
      transition: ease-in all 0.5s;
-     background-color: #48ca95;
+     background-color: #0000b5;;
      text-transform: uppercase;
      color: #fff;
      padding: 15px 0px;
@@ -874,10 +892,10 @@ ul.btn li:last-child {
 /** footer **/
 
 .footer {
-     background: url(../images/footer.jpg);
+     background-color: #000000c7;
      background-repeat: no-repeat;
      background-size: 100% 100%;
-     padding-top: 115px;
+     padding-top: 30px;
      text-align: center;
 }
 
@@ -898,10 +916,8 @@ ul.btn li:last-child {
 }
 
 ul.social_icon {
-     padding-top: 37px;
      width: 100%;
      float: left;
-     text-align: left;
 }
 
 ul.social_icon li {
@@ -972,7 +988,7 @@ ul.social_icon li a:hover {
 .sub_btn {
      font-size: 17px;
      transition: ease-in all 0.5s;
-     background-color: #48ca95;
+     background-color: #0000b5;;
      color: #fff;
      padding: 10px 0px;
      max-width: 147px;
@@ -1020,12 +1036,10 @@ ul.social_icon li a:hover {
 
 .inner_posituong .header {
      position: inherit;
-     background: #2470de;
+     background-image: url(../images/chico.png);
 }
 
-.computer_page .laptop {
-     margin-top: 90px;
-}
+
 
 .contact_page .contact {
      margin-top: 90px;
@@ -1058,6 +1072,7 @@ ul.social_icon li a:hover {
 
 .about_img figure img {
      width: 100%;
+         border: 20px solid #2273de;
 }
 
 
@@ -1190,4 +1205,289 @@ ul.social_icon li a:hover {
  #banner1 .carousel-control-next:hover,
  #banner1 .carousel-control-prev:hover {
      background-color: rgba(0, 0, 0, 0.8);
+ }
+ 
+
+      /* STYLE PRODUCTS.HTML */
+      .container-img {
+          background-color: #f7f7f9;
+          flex: 1;
+          width: 800px;
+     }
+     .container-info-product {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+     }
+     .container-price {
+          padding-bottom: 20px;
+          border-bottom: 1px solid #e4e4e4;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+     }
+     .container-details-product {
+          padding: 30px 0;
+     }
+     .form-group {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          margin-bottom: 15px;
+     }
+     .btn-clean {
+          border: none;
+          background: none;
+          color: #666;
+          margin-left: 120px;
+          cursor: pointer;
+     }
+     
+     .btn-clean:hover {
+          color: #1bbeb4;
+     }
+     .container-add-cart {
+          display: flex;
+          gap: 20px;
+          padding-bottom: 30px;
+          border-bottom: 1px solid #e4e4e4;
+     }
+     .container-add-cart {
+          display: flex;
+          gap: 20px;
+          padding-bottom: 30px;
+          border-bottom: 1px solid #e4e4e4;
+     }
+     .btn-increment-decrement {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 7px;
+          right: 7px;
+     }
+     .fa-chevron-up:hover {
+          color: #1bbeb4;
+     }
+     .fa-chevron-down:hover {
+          color: #1bbeb4;
+     }
+     .btn-add-to-cart {
+          border: none;
+          background-color: #252525;
+          padding: 10px;
+          color: #f7f7f7;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          font-weight: 700;
+          cursor: pointer;
+     }
+     
+     .btn-add-to-cart:hover {
+          color: #1bbeb4;
+     }
+     .container-description,
+     .container-additional-information,
+     .container-reviews {
+          display: flex;
+          flex-direction: column;
+          border-bottom: 1px solid #e4e4e4;
+          padding: 10px 0;
+     }
+     .title-description,
+     .title-additional-information,
+     .title-reviews {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+     }
+     .container-social {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+          align-items: center;
+          border-bottom: 1px solid #e4e4e4;
+     }
+     .container-buttons-social {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+     }
+     .card-list-products {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 25px;
+     }
+     .card {
+          cursor: pointer;
+     }
+     .card-img {
+          background: transparent;
+          margin-bottom: 15px;
+     }
+     .product-image {
+          width: 800px;
+     }
+     .product-container {
+          display: flex;
+      }
+      
+      .product-image {
+          flex: 1;
+          padding-right: 20px; /* Espacio entre la imagen y el contenido */
+      }
+      
+      .product-image img {
+          width: 100%; /* Ajusta el tamaño de la imagen */
+          border: 1px solid #212529;
+      }
+      
+      .product-content {
+          flex: 2; /* Amplía el espacio del contenido para ubicarlo a la derecha */
+      }
+      
+      /* Estilos para el contenido proporcionado */
+      .container-info-product {
+          /* Estilos para este contenedor */
+      }
+      
+      /* Otros estilos para el contenido proporcionado */
+      .categories {
+          width: 20%;
+          float: left;
+          padding: 20px;
+          background-color: #f0f0f0;
+      }
+      
+      .categories ul {
+          list-style: none;
+          padding: 0;
+      }
+      
+      .categories ul li {
+          margin-bottom: 10px;
+      }
+      
+      .categories ul li a {
+          text-decoration: none;
+          color: #333;
+          display: block;
+      }
+      
+      .categories ul li a:hover {
+          color: #000;
+      }
+      
+      .category-content {
+          padding: 20px;
+      }
+   
+      .logo img {
+          max-width: 70%;
+          height: 100px;
+      }
+      .customer {
+          opacity: 0;
+          transform: translateX(-50%);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .customer.active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+.customer h2 {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.customer p {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.customer h2 {
+     opacity: 0;
+     transform: translateX(-100%);
+     transition: opacity 0.6s ease, transform 0.6s ease;
+   }
+   
+   .customer p {
+     opacity: 0;
+     transform: translateX(-100%);
+     transition: opacity 0.6s ease, transform 0.6s ease;
+   }
+   
+   .customer img {
+     opacity: 0;
+     transform: translateX(100%);
+     border: 20px solid #2273de; /* Color azul medio celeste */
+     transition: opacity 0.6s ease, transform 0.6s ease;
+   }
+   
+   .customer .social_icon {
+     opacity: 0;
+     transform: translateY(20px);
+     transition: opacity 0.6s ease, transform 0.6s ease;
+   }
+   
+   .customer.active h2 {
+     opacity: 1;
+     transform: translateX(0);
+     color: #0059e2;
+   }
+   
+   .customer.active p {
+     opacity: 1;
+     transform: translateX(0);
+   }
+   
+   .customer.active img {
+     opacity: 1;
+     transform: translateX(0);
+   }
+   
+   .customer.active .social_icon {
+     opacity: 1;
+     transform: translateY(0);
+   }     
+
+/* Estilos de las tarjetas */
+.boxProdotto {
+     padding: 20px;
+     border-radius: 10px;
+     margin-bottom: 20px;
+     color: white;
+     display: none;
+ }
+ 
+ .blueBox {
+     background-color: #3498db;
+ }
+ 
+ .redBox {
+     background-color: #3498db;
+ }
+ 
+ .grayBox {
+     background-color: #3498db;
+ }
+ 
+ /* Efecto de animación */
+ .boxProdotto:first-child {
+     display: block;
+ }
+ 
+ .titoloSection .fadeIn {
+     opacity: 0;
+     animation: fadeIn 1s forwards;
+ }
+ 
+ @keyframes fadeIn {
+     from { opacity: 0; }
+     to { opacity: 1; }
  }

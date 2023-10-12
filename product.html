@@ -1,151 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-       <!-- Title -->
-      <title>Frio Mundo</title>
-         <!-- Favicon -->
-      <link href="images/favicon.png" rel="icon">
-      <!-- site metas -->
-      <title>cla</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout inner_posituong">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <title>Frio Mundo</title>
+   <link href="images/favicon.png" rel="icon">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/responsive.css">
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <!--[if lt IE 9]>
+   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+</head>
+<body class="main-layout inner_posituong">
+   <div class="loader_bg">
+      <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+   </div>
+   <header>
+      <div class="header">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo">
+                           <a href="index.html"><img src="images/LOGOBIEN2.png" alt="#" /></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav mr-auto">
+                           <li class="nav-item active">
+                              <a class="nav-link" href="index.html">Inicio</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="about.html">Nuestra Empresa</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="product.html">Categorias</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="contact.html">Contacto</a>
+                           </li>
+                           <li class="nav-item d_none">
+                              <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
       </div>
-      <!-- end loader -->
-      <!-- header -->
-      <header>
-         <!-- header inner -->
-         <div class="header">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                     <div class="full">
-                        <div class="center-desk">
-                           <div class="logo">
-                              <a href="index.html"><img src="images/LOGOBIEN2.png" alt="#" /></a>
+   </header>
+   <aside id="aside">
+      <ul>
+         <li onclick="mostrarMain('categoria1')">Categoría 1</li>
+         <li onclick="mostrarMain('categoria2')">Categoría 2</li>
+      </ul>
+   </aside>
+   <main id="mainContent">
+      <div id="categoria1" class="category-content">
+         <div class="product-container">
+            <div class="product-image">
+               <img src="./images/quienes2.jpeg" alt="Imagen del producto">
+            </div>
+            <div class="product-content">
+               <div class="container-info-product">
+                  <div class="container-name">
+                     <h2>Camaras Frigorificas</h2>
+                  </div>
+                  <div class="container-price">
+                     <span>$950.000</span>
+                     <i class="fa-solid fa-angle-right"></i>
+                  </div>
+                  <div class="container-details-product">
+                     <div class="form-group">
+                        <label for="colour">Paredes</label>
+                        <select name="colour" id="colour">
+                           <option disabled selected value="">Escoge una opción</option>
+                           <option value="rojo">Opcion 1</option>
+                           <option value="blanco">Opcion 2</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <label for="size">Medidas</label>
+                        <select name="size" id="size">
+                           <option disabled selected value="">Escoge una opción</option>
+                           <option value="40">2500x1000cm</option>
+                           <option value="42">2500x1500cm</option>
+                           <option value="43">2500x1500cm</option>
+                           <option value="44">4400x1550cm</option>
+                        </select>
+                     </div>
+                     <button class="btn-clean">Limpiar</button>
+                  </div>
+                  <div class="container-add-cart">
+                     <div class="container-quantity">
+                        <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
+                        <div class="btn-increment-decrement">
+                           <i class="fa-solid fa-chevron-up" id="increment"></i>
+                           <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                        </div>
+                     </div>
+                     <button class="btn-add-to-cart">
+                        <i class="fa-solid fa-plus"></i>
+                        Añadir al carrito
+                     </button>
+                  </div>
+                  <div class="container-description">
+                     <div class="title-description">
+                        <h4>Descripción</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                     </div>
+                     <div class="text-description">
+                        <p>
+                           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam iure provident atque voluptatibus reiciendis quae rerum, maxime placeat enim cupiditate voluptatum, temporibus quis iusto. Enim eum qui delectus deleniti similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint autem magni earum est dolorem saepe perferendis repellat ipsam laudantium cum assumenda quidem quam, vero similique? Iusto officiis quod blanditiis iste?
+                        </p>
+                     </div>
+                  </div>
+                  <div class="container-additional-information">
+                     <div class="title-additional-information">
+                        <h4>Información adicional</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                     </div>
+                     <div class="text-additional-information hidden">
+                        <p>Info</p>
+                     </div>
+                  </div>
+                  <div class="container-social">
+                     <span>Compartir</span>
+                     <div class="container-buttons-social">
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="categoria2" class="category-content" style="display: none;">
+            <div class="product-container">
+               <div class="product-image">
+                  <img src="./images/quienes2.jpeg" alt="Imagen del producto">
+               </div>
+               <div class="product-content">
+                  <div class="container-info-product">
+                     <div class="container-name">
+                        <h2>AS</h2>
+                     </div>
+                     <div class="container-price">
+                        <span>$950.000</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                     </div>
+                     <div class="container-details-product">
+                        <div class="form-group">
+                           <label for="colour">Paredes</label>
+                           <select name="colour" id="colour">
+                              <option disabled selected value="">Escoge una opción</option>
+                              <option value="rojo">Opcion 1</option>
+                              <option value="blanco">Opcion 2</option>
+                           </select>
+                        </div>
+                        <div class="form-group">
+                           <label for="size">Medidas</label>
+                           <select name="size" id="size">
+                              <option disabled selected value="">Escoge una opción</option>
+                              <option value="40">2500x1000cm</option>
+                              <option value="42">2500x1500cm</option>
+                              <option value="43">2500x1500cm</option>
+                              <option value="44">4400x1550cm</option>
+                           </select>
+                        </div>
+                        <button class="btn-clean">Limpiar</button>
+                     </div>
+                     <div class="container-add-cart">
+                        <div class="container-quantity">
+                           <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
+                           <div class="btn-increment-decrement">
+                              <i class="fa-solid fa-chevron-up" id="increment"></i>
+                              <i class="fa-solid fa-chevron-down" id="decrement"></i>
                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <button class="btn-add-to-cart">
+                           <i class="fa-solid fa-plus"></i>
+                           Añadir al carrito
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                           <ul class="navbar-nav mr-auto">
-                              <li class="nav-item active">
-                                 <a class="nav-link" href="index.html">Inicio</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="about.html">Nuestra Empresa</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="product.html">Categorias</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contacto</a>
-                              </li>
-                              <li class="nav-item d_none">
-                                 <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                              </li>
-                              <li class="nav-item d_none">
-                                 <a class="nav-link" href="#">Login</a>
-                              </li>
-                           </ul>
+                     </div>
+                     <div class="container-description">
+                        <div class="title-description">
+                           <h4>Descripción</h4>
+                           <i class="fa-solid fa-chevron-down"></i>
                         </div>
-                     </nav>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- end header inner -->
-      <!-- end header -->
-
-      <!--  footer -->
-      <footer>
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                     <img class="logo1" src="images/logo1.png" alt="#"/>
-                     <ul class="social_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                     </ul>
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                     <h3>About Us</h3>
-                     <ul class="about_us">
-                        <li>dolor sit amet, consectetur<br> magna aliqua. Ut enim ad <br>minim veniam, <br> quisdotempor incididunt r</li>
-                     </ul>
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                     <h3>Contact Us</h3>
-                     <ul class="conta">
-                        <li>dolor sit amet,<br> consectetur <br>magna aliqua.<br> quisdotempor <br>incididunt ut e </li>
-                     </ul>
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                     <form class="bottom_form">
-                        <h3>Newsletter</h3>
-                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                        <button class="sub_btn">subscribe</button>
-                     </form>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                        <div class="text-description">
+                           <p>
+                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam iure provident atque voluptatibus reiciendis quae rerum, maxime placeat enim cupiditate voluptatum, temporibus quis iusto. Enim eum qui delectus deleniti similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint autem magni earum est dolorem saepe perferendis repellat ipsam laudantium cum assumenda quidem quam, vero similique? Iusto officiis quod blanditiis iste?
+                           </p>
+                        </div>
+                     </div>
+                     <div class="container-additional-information">
+                        <div class="title-additional-information">
+                           <h4>Información adicional</h4>
+                           <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="text-additional-information hidden">
+                           <p>Info</p>
+                        </div>
+                     </div>
+                     <div class="container-social">
+                        <span>Compartir</span>
+                        <div class="container-buttons-social">
+                           <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                           <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                           <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                           <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                           <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
-</html>
 
+   </main>
+   <footer>
+      <div class="footer">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <img class="logo1" src="images/circulo2.png" alt="#" />
+                  <ul class="social_icon">
+                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                     <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <h3>HORARIOS DE ATENCIÓN</h3>
+                  <ul class="about_us">
+                     <li>Lunes a viernes <br> Sabado</li>
+                  </ul>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <h3>Contacto</h3>
+                  <ul class="conta">
+                     <li>WhatsApp<br>example@gmail.com<br></li>
+                  </ul>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <form class="bottom_form">
+                     <h3>Para mas Info</h3>
+                     <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                     <button class="sub_btn">Ingresa email</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="copyright">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <p>© 2023 Los derechos reservados Desarrollo y Diseño Web a <a href="https://www.instagram.com/web_desweby/">DESWEBY</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+</body>
+</html>
