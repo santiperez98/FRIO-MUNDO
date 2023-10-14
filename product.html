@@ -65,13 +65,23 @@
          </div>
       </div>
    </header>
+   <aside id="carrito" class="carrito-aside">
+      <h2>Carrito de compras</h2>
+      <ul id="lista-carrito" class="lista-carrito">
+         <!-- Los productos seleccionados se mostrarán aquí -->
+      </ul>
+   </aside>
    <aside id="aside">
       <ul>
-         <li onclick="mostrarMain('categoria1')">Categoría 1</li>
-         <li onclick="mostrarMain('categoria2')">Categoría 2</li>
+         <li onclick="mostrarMain('categoria1')">Camaras Frigorificas</li>
+         <li onclick="mostrarMain('categoria2')">Walking in Cooler</li>
+         <li onclick="mostrarMain('categoria3')">Conservadoras Termicas</li>
+         <li onclick="mostrarMain('categoria4')">Condensadores y Evaporadores</li>
+         <li onclick="mostrarMain('categoria5')">Paneles Frigorificos</li>
       </ul>
    </aside>
    <main id="mainContent">
+      <!-- CATEGORIA 1 -->
       <div id="categoria1" class="category-content">
          <div class="product-container">
             <div class="product-image">
@@ -115,9 +125,9 @@
                            <i class="fa-solid fa-chevron-down" id="decrement"></i>
                         </div>
                      </div>
-                     <button class="btn-add-to-cart">
+                     <button class="btn-add-to-cart" onclick="agregarAlCarrito()">Añadir al carrito</button>
                         <i class="fa-solid fa-plus"></i>
-                        Añadir al carrito
+                       
                      </button>
                   </div>
                   <div class="container-description">
@@ -154,18 +164,19 @@
             </div>
          </div>
       </div>
+         <!-- CATEGORIA 2 -->
       <div id="categoria2" class="category-content" style="display: none;">
             <div class="product-container">
                <div class="product-image">
-                  <img src="./images/quienes2.jpeg" alt="Imagen del producto">
+                  <img src="./images/quienes3.jpeg" alt="Imagen del producto">
                </div>
                <div class="product-content">
                   <div class="container-info-product">
                      <div class="container-name">
-                        <h2>AS</h2>
+                        <h2>Walking in Cooler</h2>
                      </div>
                      <div class="container-price">
-                        <span>$950.000</span>
+                        <span>$840.000</span>
                         <i class="fa-solid fa-angle-right"></i>
                      </div>
                      <div class="container-details-product">
@@ -236,6 +247,255 @@
                </div>
             </div>
          </div>
+            <!-- CATEGORIA 3 -->
+         <div id="categoria3" class="category-content" style="display: none;">
+            <div class="product-container">
+               <div class="product-image">
+                  <img src="./images/quienes3.jpeg" alt="Imagen del producto">
+               </div>
+               <div class="product-content">
+                  <div class="container-info-product">
+                     <div class="container-name">
+                        <h2>Conservadoras Termicas</h2>
+                     </div>
+                     <div class="container-price">
+                        <span>$400.000</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                     </div>
+                     <div class="container-details-product">
+                        <div class="form-group">
+                           <label for="colour">Paredes</label>
+                           <select name="colour" id="colour">
+                              <option disabled selected value="">Escoge una opción</option>
+                              <option value="rojo">Opcion 1</option>
+                              <option value="blanco">Opcion 2</option>
+                           </select>
+                        </div>
+                        <div class="form-group">
+                           <label for="size">Medidas</label>
+                           <select name="size" id="size">
+                              <option disabled selected value="">Escoge una opción</option>
+                              <option value="40">2500x1000cm</option>
+                              <option value="42">2500x1500cm</option>
+                              <option value="43">2500x1500cm</option>
+                              <option value="44">4400x1550cm</option>
+                           </select>
+                        </div>
+                        <button class="btn-clean">Limpiar</button>
+                     </div>
+                     <div class="container-add-cart">
+                        <div class="container-quantity">
+                           <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
+                           <div class="btn-increment-decrement">
+                              <i class="fa-solid fa-chevron-up" id="increment"></i>
+                              <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                           </div>
+                        </div>
+                        <button class="btn-add-to-cart">
+                           <i class="fa-solid fa-plus"></i>
+                           Añadir al carrito
+                        </button>
+                     </div>
+                     <div class="container-description">
+                        <div class="title-description">
+                           <h4>Descripción</h4>
+                           <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="text-description">
+                           <p>
+                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam iure provident atque voluptatibus reiciendis quae rerum, maxime placeat enim cupiditate voluptatum, temporibus quis iusto. Enim eum qui delectus deleniti similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint autem magni earum est dolorem saepe perferendis repellat ipsam laudantium cum assumenda quidem quam, vero similique? Iusto officiis quod blanditiis iste?
+                           </p>
+                        </div>
+                     </div>
+                     <div class="container-additional-information">
+                        <div class="title-additional-information">
+                           <h4>Información adicional</h4>
+                           <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="text-additional-information hidden">
+                           <p>Info</p>
+                        </div>
+                     </div>
+                     <div class="container-social">
+                        <span>Compartir</span>
+                        <div class="container-buttons-social">
+                           <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                           <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                           <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                           <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                           <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+               <!-- CATEGORIA 4 -->
+         <div id="categoria4" class="category-content" style="display: none;">
+            <div class="product-container">
+               <div class="product-image">
+                  <img src="./images/quienes3.jpeg" alt="Imagen del producto">
+               </div>
+               <div class="product-content">
+                  <div class="container-info-product">
+                     <div class="container-name">
+                        <h2>Condensadores y Evaporadores</h2>
+                     </div>
+                     <div class="container-price">
+                        <span>$350.000</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                     </div>
+                     <div class="container-details-product">
+                        <div class="form-group">
+                           <label for="colour">Paredes</label>
+                           <select name="colour" id="colour">
+                              <option disabled selected value="">Escoge una opción</option>
+                              <option value="rojo">Opcion 1</option>
+                              <option value="blanco">Opcion 2</option>
+                           </select>
+                        </div>
+                        <div class="form-group">
+                           <label for="size">Medidas</label>
+                           <select name="size" id="size">
+                              <option disabled selected value="">Escoge una opción</option>
+                              <option value="40">2500x1000cm</option>
+                              <option value="42">2500x1500cm</option>
+                              <option value="43">2500x1500cm</option>
+                              <option value="44">4400x1550cm</option>
+                           </select>
+                        </div>
+                        <button class="btn-clean">Limpiar</button>
+                     </div>
+                     <div class="container-add-cart">
+                        <div class="container-quantity">
+                           <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
+                           <div class="btn-increment-decrement">
+                              <i class="fa-solid fa-chevron-up" id="increment"></i>
+                              <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                           </div>
+                        </div>
+                        <button class="btn-add-to-cart">
+                           <i class="fa-solid fa-plus"></i>
+                           Añadir al carrito
+                        </button>
+                     </div>
+                     <div class="container-description">
+                        <div class="title-description">
+                           <h4>Descripción</h4>
+                           <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="text-description">
+                           <p>
+                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam iure provident atque voluptatibus reiciendis quae rerum, maxime placeat enim cupiditate voluptatum, temporibus quis iusto. Enim eum qui delectus deleniti similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint autem magni earum est dolorem saepe perferendis repellat ipsam laudantium cum assumenda quidem quam, vero similique? Iusto officiis quod blanditiis iste?
+                           </p>
+                        </div>
+                     </div>
+                     <div class="container-additional-information">
+                        <div class="title-additional-information">
+                           <h4>Información adicional</h4>
+                           <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="text-additional-information hidden">
+                           <p>Info</p>
+                        </div>
+                     </div>
+                     <div class="container-social">
+                        <span>Compartir</span>
+                        <div class="container-buttons-social">
+                           <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                           <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                           <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                           <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                           <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+                        <!-- CATEGORIA 5 -->
+                        <div id="categoria5" class="category-content" style="display: none;">
+                           <div class="product-container">
+                              <div class="product-image">
+                                 <img src="./images/quienes3.jpeg" alt="Imagen del producto">
+                              </div>
+                              <div class="product-content">
+                                 <div class="container-info-product">
+                                    <div class="container-name">
+                                       <h2>Paneles Frigorificos</h2>
+                                    </div>
+                                    <div class="container-price">
+                                       <span>$250.000</span>
+                                       <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                    <div class="container-details-product">
+                                       <div class="form-group">
+                                          <label for="colour">Paredes</label>
+                                          <select name="colour" id="colour">
+                                             <option disabled selected value="">Escoge una opción</option>
+                                             <option value="rojo">Opcion 1</option>
+                                             <option value="blanco">Opcion 2</option>
+                                          </select>
+                                       </div>
+                                       <div class="form-group">
+                                          <label for="size">Medidas</label>
+                                          <select name="size" id="size">
+                                             <option disabled selected value="">Escoge una opción</option>
+                                             <option value="40">2500x1000cm</option>
+                                             <option value="42">2500x1500cm</option>
+                                             <option value="43">2500x1500cm</option>
+                                             <option value="44">4400x1550cm</option>
+                                          </select>
+                                       </div>
+                                       <button class="btn-clean">Limpiar</button>
+                                    </div>
+                                    <div class="container-add-cart">
+                                       <div class="container-quantity">
+                                          <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
+                                          <div class="btn-increment-decrement">
+                                             <i class="fa-solid fa-chevron-up" id="increment"></i>
+                                             <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                                          </div>
+                                       </div>
+                                       <button class="btn-add-to-cart">
+                                          <i class="fa-solid fa-plus"></i>
+                                          Añadir al carrito
+                                       </button>
+                                    </div>
+                                    <div class="container-description">
+                                       <div class="title-description">
+                                          <h4>Descripción</h4>
+                                          <i class="fa-solid fa-chevron-down"></i>
+                                       </div>
+                                       <div class="text-description">
+                                          <p>
+                                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam iure provident atque voluptatibus reiciendis quae rerum, maxime placeat enim cupiditate voluptatum, temporibus quis iusto. Enim eum qui delectus deleniti similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint autem magni earum est dolorem saepe perferendis repellat ipsam laudantium cum assumenda quidem quam, vero similique? Iusto officiis quod blanditiis iste?
+                                          </p>
+                                       </div>
+                                    </div>
+                                    <div class="container-additional-information">
+                                       <div class="title-additional-information">
+                                          <h4>Información adicional</h4>
+                                          <i class="fa-solid fa-chevron-down"></i>
+                                       </div>
+                                       <div class="text-additional-information hidden">
+                                          <p>Info</p>
+                                       </div>
+                                    </div>
+                                    <div class="container-social">
+                                       <span>Compartir</span>
+                                       <div class="container-buttons-social">
+                                          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                                          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                          <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
 
    </main>
    <footer>

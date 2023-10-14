@@ -135,3 +135,16 @@ function mostrarMain(categoria) {
 	  selectedContent.style.display = 'block';
 	}
   }
+
+//
+
+    function agregarAlCarrito() {
+        // Lógica para agregar el producto al carrito
+        // Puedes añadir la lógica para obtener información del producto y agregarla al carrito
+
+        // Muestra el carrito
+        const carrito = document.getElementById('carrito');
+        carrito.classList.add('open');
+    }
+
+	

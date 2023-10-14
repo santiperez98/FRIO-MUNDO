@@ -43,7 +43,52 @@ aside {
      padding: 10px 0;
    }
    
-
+/* Estilos para el carrito */
+.carrito-aside {
+     position: fixed;
+     top: 0;
+     right: -400px;  /* Inicialmente oculto */
+     background-color: white;
+     width: 400px;
+     height: 100%;
+     overflow-y: auto;
+     padding: 20px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+     transition: right 0.3s ease-in-out;
+     z-index: 1000; /* Para asegurar que esté encima de otros elementos */
+ }
+ 
+ .carrito-aside.open {
+     right: 0;  /* Muestra el carrito en la posición deseada */
+ }
+ 
+ .lista-carrito {
+     list-style: none;
+     padding: 0;
+ }
+ 
+ .lista-carrito li {
+     border-bottom: 1px solid #ccc;
+     padding: 10px 0;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+ 
+ .lista-carrito img {
+     max-width: 50px;
+     max-height: 50px;
+ }
+ 
+ .lista-carrito .quantity {
+     margin-left: 10px;
+ }
+ 
+ .lista-carrito .remove {
+     cursor: pointer;
+     color: red;
+ }
+ 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 .loader {
      width: 84px;
