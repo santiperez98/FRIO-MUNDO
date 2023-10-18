@@ -65,12 +65,7 @@
          </div>
       </div>
    </header>
-   <aside id="carrito" class="carrito-aside">
-      <h2>Carrito de compras</h2>
-      <ul id="lista-carrito" class="lista-carrito">
-         <!-- Los productos seleccionados se mostrarán aquí -->
-      </ul>
-   </aside>
+
    <aside id="aside">
       <ul>
          <li onclick="mostrarMain('categoria1')">Camaras Frigorificas</li>
@@ -98,38 +93,68 @@
                   </div>
                   <div class="container-details-product">
                      <div class="form-group">
-                        <label for="colour">Paredes</label>
-                        <select name="colour" id="colour">
-                           <option disabled selected value="">Escoge una opción</option>
-                           <option value="rojo">Opcion 1</option>
-                           <option value="blanco">Opcion 2</option>
+                        <label for="temperature">Temperatura</label>
+                        <select name="temperature" id="temperature">
+                            <option disabled selected value="">Escoge una opción</option>
+                            <optgroup label="Media temperatura">
+                                <option value="0">0°C</option>
+                                <option value="1">1°C</option>
+                                <option value="2">2°C</option>
+                                <option value="3">3°C</option>
+                                <option value="4">4°C</option>
+                                <option value="5">5°C</option>
+                            </optgroup>
+                            <optgroup label="Baja temperatura">
+                                <option value="-18">-18°C</option>
+                                <option value="-19">-19°C</option>
+                                <option value="-20">-20°C</option>
+                                <option value="-21">-21°C</option>
+                                <option value="-22">-22°C</option>
+                                <option value="-23">-23°C</option>
+                                <option value="-24">-24°C</option>
+                                <option value="-25">-25°C</option>
+                            </optgroup>
                         </select>
-                     </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="temperatureType">Tipo de Paneles</label>
+                           <select name="temperatureType" id="temperatureType">
+                         <option disabled selected value="">Escoge una opción</option>
+                         <option value="media">Media temperatura</option>
+                         <option value="baja">Baja temperatura (congelado)</option>
+                     </select>
+                  </div>
+                 <div class="form-group" id="mediaTemperatureSlider" style="display:none;">
+                     <label for="mediaTemperature">Expesor (50-60 mm)</label>
+                        <input type="range" min="50" max="60" value="55" class="slider" id="mediaTemperature">
+                           <span id="mediaTemperatureValue">55 mm</span>
+                 </div>
+                 <div class="form-group" id="bajaTemperatureSlider" style="display:none;">
+                     <label for="bajaTemperature">Expesor (100-150 mm)</label>
+                        <input type="range" min="100" max="150" value="125" class="slider" id="bajaTemperature">
+                     <span id="bajaTemperatureValue">125 mm</span>
+                 </div>
                      <div class="form-group">
-                        <label for="size">Medidas</label>
-                        <select name="size" id="size">
-                           <option disabled selected value="">Escoge una opción</option>
-                           <option value="40">2500x1000cm</option>
-                           <option value="42">2500x1500cm</option>
-                           <option value="43">2500x1500cm</option>
-                           <option value="44">4400x1550cm</option>
-                        </select>
-                     </div>
-                     <button class="btn-clean">Limpiar</button>
+                        <label for="height">Altura (cm)</label>
+                           <input type="number" min="0" placeholder="Altura en cm" id="height">
+                      </div>
+                   <div class="form-group">
+                     <label for="width">Ancho (cm)</label>
+                      <input type="number" min="0" placeholder="Ancho en cm" id="width">
+                   </div>
                   </div>
                   <div class="container-add-cart">
                      <div class="container-quantity">
-                        <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
-                        <div class="btn-increment-decrement">
-                           <i class="fa-solid fa-chevron-up" id="increment"></i>
-                           <i class="fa-solid fa-chevron-down" id="decrement"></i>
-                        </div>
+                         <label for="quantity">Cantidad</label>
+                         <input type="number" placeholder="1" value="1" min="1" class="input-quantity" id="quantity" />
+                         <div class="btn-increment-decrement">
+                             <i class="fa-solid fa-chevron-up" id="increment"></i>
+                             <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                         </div>
                      </div>
                      <button class="btn-add-to-cart" onclick="agregarAlCarrito()">Añadir al carrito</button>
-                        <i class="fa-solid fa-plus"></i>
-                       
-                     </button>
-                  </div>
+                     <i class="fa-solid fa-plus"></i>
+                 </div>
                   <div class="container-description">
                      <div class="title-description">
                         <h4>Descripción</h4>
@@ -164,6 +189,7 @@
             </div>
          </div>
       </div>
+      
          <!-- CATEGORIA 2 -->
       <div id="categoria2" class="category-content" style="display: none;">
             <div class="product-container">
@@ -179,6 +205,7 @@
                         <span>$840.000</span>
                         <i class="fa-solid fa-angle-right"></i>
                      </div>
+                     
                      <div class="container-details-product">
                         <div class="form-group">
                            <label for="colour">Paredes</label>
@@ -498,6 +525,15 @@
                         </div>
 
    </main>
+   <aside id="carrito" class="carrito-aside">
+    <div class="carrito-content">
+        <h2>Carrito</h2>
+        <ul id="carrito-items">
+            <!-- Los productos agregados al carrito se mostrarán aquí -->
+        </ul>
+    </div>
+    <button class="cerrar-carrito" onclick="cerrarCarrito()">Cerrar Carrito</button>
+</aside>
    <footer>
       <div class="footer">
          <div class="container">

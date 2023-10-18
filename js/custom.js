@@ -138,13 +138,90 @@ function mostrarMain(categoria) {
 
 //
 
+//
+const mediaTemperatureSlider = document.getElementById('mediaTemperature');
+const mediaTemperatureValue = document.getElementById('mediaTemperatureValue');
+
+mediaTemperatureSlider.addEventListener('input', () => {
+	mediaTemperatureValue.textContent = mediaTemperatureSlider.value + ' mm';
+});
+
+const bajaTemperatureSlider = document.getElementById('bajaTemperature');
+const bajaTemperatureValue = document.getElementById('bajaTemperatureValue');
+
+bajaTemperatureSlider.addEventListener('input', () => {
+	bajaTemperatureValue.textContent = bajaTemperatureSlider.value + ' mm';
+});
+
+const temperatureTypeSelect = document.getElementById('temperatureType');
+const mediaTemperatureSliderGroup = document.getElementById('mediaTemperatureSlider');
+const bajaTemperatureSliderGroup = document.getElementById('bajaTemperatureSlider');
+
+temperatureTypeSelect.addEventListener('change', () => {
+	const selectedType = temperatureTypeSelect.value;
+
+	if (selectedType === 'media') {
+		mediaTemperatureSliderGroup.style.display = 'block';
+		bajaTemperatureSliderGroup.style.display = 'none';
+	} else if (selectedType === 'baja') {
+		mediaTemperatureSliderGroup.style.display = 'none';
+		bajaTemperatureSliderGroup.style.display = 'block';
+	}
+});
+
+//
+
+    const carritoAside = document.getElementById('carrito');
+    const carritoItems = document.getElementById('carrito-items');
+    const temperatureValue = document.getElementById('temperature').value;
+    const temperatureTypeValue = document.getElementById('temperatureType').value;
+    const heightValue = document.getElementById('height').value;
+    const widthValue = document.getElementById('width').value;
+    const quantityValue = document.getElementById('quantity').value;
+
     function agregarAlCarrito() {
-        // Lógica para agregar el producto al carrito
-        // Puedes añadir la lógica para obtener información del producto y agregarla al carrito
+		// Aquí debes agregar lógica para obtener la información del producto y opciones seleccionadas
+		// Supongamos que tienes las siguientes variables con la información del producto
+    // Supongamos que tienes las siguientes variables con la información del producto
+	const producto = {
+        imagen: './images/quienes2.jpeg',
+        nombre: 'Camaras Frigorificas',
+        precio: '$950.000',
 
-        // Muestra el carrito
-        const carrito = document.getElementById('carrito');
-        carrito.classList.add('open');
-    }
-
+    };
 	
+	const listItem = document.createElement('li');
+    listItem.innerHTML = `
+        <img src="${producto.imagen}" alt="Imagen del producto">
+        <div class="info-producto">
+            <h3>${producto.nombre}</h3>
+            <p>Precio: ${producto.precio}</p>
+            <p>Temperatura: ${temperatureValue}</p>
+            <p>Tipo de Paneles: ${temperatureTypeValue}</p>
+            <p>Altura: ${heightValue} cm</p>
+            <p>Ancho: ${widthValue} cm</p>
+            <p>Cantidad: ${quantityValue}</p>
+            <!-- ... otras opciones seleccionadas ... -->
+        </div>
+    `;
+		
+		    // Añade el botón de eliminar
+    const botonEliminar = document.createElement('button');
+    botonEliminar.innerText = 'Eliminar';
+    botonEliminar.addEventListener('click', () => eliminarProducto(listItem));
+    listItem.appendChild(botonEliminar);
+		// Agrega el elemento a la lista de items del carrito
+		carritoItems.appendChild(listItem);
+	
+		// Muestra el carrito deslizándolo desde la derecha
+		carritoAside.style.right = '0';
+	}
+
+	function cerrarCarrito() {
+		// Oculta el carrito deslizándolo hacia la derecha
+		carritoAside.style.right = '-400px';
+	}
+	function eliminarProducto(item) {
+		// Elimina el elemento de la lista del carrito
+		carritoItems.removeChild(item);
+	}

@@ -43,52 +43,49 @@ aside {
      padding: 10px 0;
    }
    
-/* Estilos para el carrito */
-.carrito-aside {
+   .carrito-aside {
      position: fixed;
      top: 0;
-     right: -400px;  /* Inicialmente oculto */
-     background-color: white;
+     right: -400px; /* Inicialmente fuera de la pantalla */
      width: 400px;
      height: 100%;
-     overflow-y: auto;
-     padding: 20px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+     background-color: white;
+     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
      transition: right 0.3s ease-in-out;
-     z-index: 1000; /* Para asegurar que esté encima de otros elementos */
+     overflow-y: auto;
  }
  
- .carrito-aside.open {
-     right: 0;  /* Muestra el carrito en la posición deseada */
+ .carrito-content {
+     padding: 20px;
  }
  
- .lista-carrito {
-     list-style: none;
-     padding: 0;
- }
- 
- .lista-carrito li {
-     border-bottom: 1px solid #ccc;
-     padding: 10px 0;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
- }
- 
- .lista-carrito img {
-     max-width: 50px;
-     max-height: 50px;
- }
- 
- .lista-carrito .quantity {
-     margin-left: 10px;
- }
- 
- .lista-carrito .remove {
+ .cerrar-carrito {
+     display: block;
+     width: 100%;
+     padding: 10px;
+     background-color: #333;
+     color: white;
+     border: none;
      cursor: pointer;
-     color: red;
  }
  
+ .cerrar-carrito:hover {
+     background-color: #555;
+ }
+ 
+ .carrito-content button {
+     display: block;
+     margin-top: 10px;
+     padding: 5px 10px;
+     background-color: #ff3333;
+     border: none;
+     color: white;
+     cursor: pointer;
+ }
+ 
+ .carrito-content button:hover {
+     background-color: #ff5555;
+ }
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 .loader {
      width: 84px;
