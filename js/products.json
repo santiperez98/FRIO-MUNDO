@@ -1,0 +1,41 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "imagen": "ruta_de_la_imagen1.jpg",
+        "titulo": "Producto 1",
+        "precio": 99.99,
+        "altura_cm": 50,
+        "ancho_cm": 100,
+        "cantidad": 100,
+        "temperatura": {
+          "tipo": "media",
+          "rango": "0°C - 5°C",
+          "espesor_mm": {
+            "min": 50,
+            "max": 60
+          }
+        },
+        "tipoDePaneles": ["media_temperatura_panel"]
+      },
+      {
+        "id": 2,
+        "imagen": "ruta_de_la_imagen2.jpg",
+        "titulo": "Producto 2",
+        "precio": 149.99,
+        "altura_cm": 75,
+        "ancho_cm": 120,
+        "cantidad": 50,
+        "temperatura": {
+          "tipo": "baja",
+          "rango": "-18°C - -25°C",
+          "espesor_mm": {
+            "min": 100,
+            "max": 150
+          }
+        },
+        "tipoDePaneles": ["baja_temperatura_panel"]
+      }
+    ]
+  }
+  

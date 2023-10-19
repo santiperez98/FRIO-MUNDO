@@ -66,6 +66,12 @@
       </div>
    </header>
 
+   <div id="productos-en-tienda">
+      <!-- Aquí se mostrarán los productos de la tienda -->
+  </div>
+   // Recuperar la lista de productos desde el almacenamiento local
+   let productos = JSON.parse(localStorage.getItem('productos')) || [];
+   
    <aside id="aside">
       <ul>
          <li onclick="mostrarMain('categoria1')">Camaras Frigorificas</li>
@@ -75,6 +81,7 @@
          <li onclick="mostrarMain('categoria5')">Paneles Frigorificos</li>
       </ul>
    </aside>
+   
    <main id="mainContent">
       <!-- CATEGORIA 1 -->
       <div id="categoria1" class="category-content">
@@ -583,5 +590,30 @@
    <script src="js/jquery-3.0.0.min.js"></script>
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="js/custom.js"></script>
-</body>
-</html>
+  <script>
+        // Recuperar la lista de productos desde el almacenamiento local
+        let productos = JSON.parse(localStorage.getItem('productos')) || [];
+
+        // Función para mostrar los productos en la tienda
+        function mostrarProductosEnTienda() {
+            const productosContainer = document.getElementById('productos-en-tienda');
+            productosContainer.innerHTML = '';
+
+            productos.forEach((producto, index) => {
+                const productoElement = document.createElement('div');
+                productoElement.innerHTML = `
+                    <h3>${producto.titulo}</h3>
+                    <p>Precio: $${producto.precio}</p>
+                    <p>Stock: ${producto.cantidad}</p>
+                    <p>Imagen: <img src="${producto.imagen}" alt="${producto.titulo}"></p>
+                `;
+
+                productosContainer.appendChild(productoElement);
+            });
+        }
+
+        // Llama a la función para mostrar los productos en la tienda al cargar la página
+        mostrarProductosEnTienda();
+    </script>
+   </body>
+   </html>

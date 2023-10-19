@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Productos</title>
+</head>
+<body>
+    <div id="admin-container">
+        <!-- Panel de administración -->
+        <h2>Administración de Productos</h2>
+        <button id="nuevo-producto">Agregar Nuevo Producto</button>
+
+        <div id="productos-container">
+            <!-- Aquí se insertarán los productos -->
+        </div>
+
+        <div id="formulario-creacion" style="display: none;">
+            <!-- Aquí se mostrará el formulario de creación -->
+            <h2>Nuevo Producto</h2>
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo">
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" step="0.01">
+            <label for="cantidad">Cantidad en Stock:</label>
+            <input type="number" id="cantidad">
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen">
+            <button id="guardar-nuevo-producto">Guardar</button>
+        </div>
+    </div>
+
+    <script>
+        // Recuperar la lista de productos desde el almacenamiento local si existe
+        let productos = JSON.parse(localStorage.getItem('productos')) || [];
+
+        const productosContainer = document.getElementById('productos-container');
+        const formularioCreacion = document.getElementById('formulario-creacion');
+
+        // Función para mostrar productos
+        function mostrarProductos() {
+            productosContainer.innerHTML = '';
+            productos.forEach((producto, index) => {
+                const productoElement = document.createElement('div');
+                productoElement.innerHTML = `
+                    <h3>${producto.titulo}</h3>
+                    <p>Precio: $${producto.precio}</p>
+                    <p>Stock: ${producto.cantidad}</p>
+                    <p>Imagen: <img src="${producto.imagen}" alt="${producto.titulo}"></p>
+                    <button class="eliminar-producto" data-index="${index}">Eliminar</button>
+                `;
+                productosContainer.appendChild(productoElement);
+            });
+
+            // Manejo de eventos para eliminar productos
+            const botonesEliminar = document.querySelectorAll('.eliminar-producto');
+            botonesEliminar.forEach((boton) => {
+                boton.addEventListener('click', (event) => {
+                    const index = event.target.getAttribute('data-index');
+                    productos.splice(index, 1);
+                    localStorage.setItem('productos', JSON.stringify(productos));
+                    mostrarProductos(); // Actualizar la lista de productos
+                });
+            });
+        }
+
+        // Mostrar productos al cargar la página
+        mostrarProductos();
+
+        // Manejo de eventos para mostrar el formulario de creación
+        const nuevoProductoButton = document.getElementById('nuevo-producto');
+        nuevoProductoButton.addEventListener('click', () => {
+            formularioCreacion.style.display = 'block';
+        });
+
+        // Manejo de eventos para guardar el nuevo producto
+        const guardarNuevoProductoButton = document.getElementById('guardar-nuevo-producto');
+        guardarNuevoProductoButton.addEventListener('click', () => {
+            // Obtener los valores ingresados en el formulario
+            const nuevoProducto = {
+                titulo: document.getElementById('titulo').value,
+                precio: parseFloat(document.getElementById('precio').value),
+                cantidad: parseInt(document.getElementById('cantidad').value),
+            };
+            
+            // Obtener la imagen seleccionada
+            const imagenInput = document.getElementById('imagen');
+            const imagenFile = imagenInput.files[0];
+
+            // Crear un Blob a partir de la imagen
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                nuevoProducto.imagen = event.target.result; // Guardar la imagen como base64
+                productos.push(nuevoProducto);
+                localStorage.setItem('productos', JSON.stringify(productos));
+                mostrarProductos();
+                document.getElementById('titulo').value = '';
+                document.getElementById('precio').value = '';
+                document.getElementById('cantidad').value = '';
+                document.getElementById('imagen').value = ''; // Limpiar el campo de imagen
+                formularioCreacion.style.display = 'none';
+            };
+            reader.readAsDataURL(imagenFile);
+        });
+
+    </script>
+    <script src="common.js"></script>
+</body>
+</html>
